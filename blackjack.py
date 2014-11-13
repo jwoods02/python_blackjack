@@ -1,9 +1,7 @@
 # Blackjack
 # Uses object oriented programming methodology
-#NOTES
-#Deck is fully simulated, cards will not come up twice but deck needs shuffling after each turn (use shuffle(deck))
-#jack is 11, queen is 12, king is 13, Ace is 14 (Need to implement) 
-#
+# NOTES
+# Deck is fully simulated, cards will not come up twice but deck needs shuffling after each turn (use shuffle(deck))
 
 import random
 import time
