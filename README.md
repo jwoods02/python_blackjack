@@ -1,4 +1,4 @@
 Basic Python Blackjack
 ================
 
-A basic console based Blackjack game.
+A basic console based Blackjack game
