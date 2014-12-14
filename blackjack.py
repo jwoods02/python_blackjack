@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Blackjack
 # Uses object oriented programming methodology
 # NOTES
