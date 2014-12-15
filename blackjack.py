@@ -164,7 +164,7 @@ def whoWins():
 
     elif addCardValues(playerHand) > addCardValues(dealerHand): #if the players cards add up to more than dealers
         playerScore += 1 #Adds a point to the player
-        print("Well done " + playerName + "you win!")
+        print("Well done " + playerName + "! You win!")
 
     elif addCardValues(dealerHand) > addCardValues(playerHand): #if the dealers cards add up to more than players
         dealerScore += 1 #Adds a point to the dealer
