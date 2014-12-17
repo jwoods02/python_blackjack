@@ -156,6 +156,7 @@ def whoWins():
     #Tell Python dealerScore and playerScore refer to global variables
     global dealerScore
     global playerScore
+    global drawScore
     
     if isBust(playerHand) == True:#if player is bust
         dealerScore += 1 #Adds a point to the dealer
@@ -174,11 +175,12 @@ def whoWins():
         print("Unlucky, the dealer wins.")
 
     else:
+        drawScore += 1
         print("The game is tied! Nobody gets a point this time...")
 
 
 def scoreBoard():
-    print(playerName + ":" , str(playerScore), "Dealer:", str(dealerScore))
+    print(playerName + ":" , str(playerScore), "Dealer:", str(dealerScore), "Draws:", str(drawScore))
 
 
 
@@ -188,8 +190,8 @@ def scoreBoard():
 #Sets scores for the game
 
 playerScore = 0
-
 dealerScore = 0
+drawScore = 0
 
 #Asks for Player's name
 playerName = input("Please enter your name: ")
