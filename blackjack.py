@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 # Blackjack
 # Uses object oriented programming methodology
 # NOTES
 # Deck is fully simulated, cards will not come up twice but deck needs shuffling after each turn (use shuffle(deck))
+# 
+# forked from https://github.com/ijames55/python_blackjack
 
 import random
 import time
@@ -18,7 +21,7 @@ def makeDeck():
     deck = []
     
     #Creates full deck of cards
-    for suit in 'sdhc': 
+    for suit in '♠♥♦♣': 
         for value in ["A",2,3,4,5,6,7,8,9,10,"J","Q","K"]:
             deck.append(str(value)+suit)
     
