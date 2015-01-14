@@ -154,6 +154,10 @@ def whoWins():
     global dealerScore
     global playerScore
     
+    if (len(playerHand) > 4) and (isBust(playerHand) == False): #if the player has 5 or more cards 
+        playerScore += 1 #Adds a point to the player
+        print("You got a 5 card trick! Well done you get a point.")
+    
     if isBust(playerHand) == True:#if player is bust
         dealerScore += 1 #Adds a point to the dealer
         print("You went bust! The dealer gets a point.")
