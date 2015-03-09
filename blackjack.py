@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 # Blackjack
 # Uses object oriented programming methodology
 # NOTES
 # Deck is fully simulated, cards will not come up twice but deck needs shuffling after each turn (use shuffle(deck))
+# 
+# forked from https://github.com/ijames55/python_blackjack
 
 import random
 import time
@@ -18,7 +21,7 @@ def makeDeck():
     deck = []
     
     #Creates full deck of cards
-    for suit in 'sdhc': 
+    for suit in '♠♥♦♣': 
         for value in ["A",2,3,4,5,6,7,8,9,10,"J","Q","K"]:
             deck.append(str(value)+suit)
     
@@ -153,6 +156,7 @@ def whoWins():
     #Tell Python dealerScore and playerScore refer to global variables
     global dealerScore
     global playerScore
+    global drawScore
     
     if (len(playerHand) > 4) and (isBust(playerHand) == False): #if the player has 5 or more cards 
         playerScore += 1 #Adds a point to the player
@@ -168,18 +172,19 @@ def whoWins():
 
     elif addCardValues(playerHand) > addCardValues(dealerHand): #if the players cards add up to more than dealers
         playerScore += 1 #Adds a point to the player
-        print("Well done " + playerName + "you win!")
+        print("Well done " + playerName + "! You win!")
 
     elif addCardValues(dealerHand) > addCardValues(playerHand): #if the dealers cards add up to more than players
         dealerScore += 1 #Adds a point to the dealer
         print("Unlucky, the dealer wins.")
 
     else:
+        drawScore += 1
         print("The game is tied! Nobody gets a point this time...")
 
 
 def scoreBoard():
-    print(playerName + ":" , str(playerScore), "Dealer:", str(dealerScore))
+    print(playerName + ":" , str(playerScore), "Dealer:", str(dealerScore), "Draws:", str(drawScore))
 
 
 
@@ -189,8 +194,8 @@ def scoreBoard():
 #Sets scores for the game
 
 playerScore = 0
-
 dealerScore = 0
+drawScore = 0
 
 #Asks for Player's name
 playerName = input("Please enter your name: ")
