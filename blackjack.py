@@ -178,13 +178,28 @@ def whoWins():
         drawScore += 1
         print("The game is tied! Nobody gets a point this time...")
 
+def playerPrct(totalGames):
+    return float (playerScore * 100) / float (totalGames)
+
+def dealerPrct(totalGames):
+    return float (dealerScore * 100) / float (totalGames)
+
+def drawPrct(totalGames):
+    return float (drawScore * 100) / float (totalGames)
 
 def scoreBoard():
-    print(playerName + ":" , str(playerScore), "Dealer:", str(dealerScore), "Draws:", str(drawScore))
+    totalGames = playerScore + dealerScore + drawScore
+    results = "%s: %s (%.1f %%), Dealer: %s (%.1f %%), Draws: %s (%.1f %%)" % (
+        playerName, playerScore, playerPrct(totalGames),
+        dealerScore, dealerPrct(totalGames),
+        drawScore, drawPrct(totalGames))
 
-
-
-
+    pattern = "-" * len (results)
+    
+    print (pattern)
+    print (results)
+    print (pattern)
+           
 """START OF MAIN GAME"""
 
 #Sets scores for the game
@@ -268,5 +283,3 @@ while True:
 
     pause()
     
-    if playAgain() == False:
-        break
