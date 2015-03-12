@@ -47,6 +47,13 @@ def makeDealerHand():
         hand.append(deck.pop()) #Takes bottom 2 cards from the deck list
     return hand
 
+def turnInfo (turnNumber):
+    """Prints turn's number."""
+    turnText = "Turn number " + str(turnNumber)
+    pattern = "-" * len (turnText)
+
+    print (turnText)
+    print (pattern)
 
 def Board():
     """Prints the hands of all players."""
@@ -207,9 +214,13 @@ def scoreBoard():
 playerScore = 0
 dealerScore = 0
 drawScore = 0
+turn = 1
 
 #Asks for Player's name
 playerName = input("Please enter your name: ")
+
+# number of turns
+turnsNumber = int (input ("Please enter number of turns: "))
 
 pause()
 
@@ -221,8 +232,10 @@ print("The aim of the  game is for the value of your cards to equal 21")
 
 pause()
 
-while True:
-
+while (turn <= turnsNumber):
+    
+    turnInfo (turn)
+    
     #set up deck and hands
     deck = makeDeck()
 
@@ -282,4 +295,6 @@ while True:
     scoreBoard()#prints scores
 
     pause()
-    
+
+    turn = turn + 1
+
